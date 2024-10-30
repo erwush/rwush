@@ -1,2 +1,1 @@
-kontol
-git 
+skibidi
