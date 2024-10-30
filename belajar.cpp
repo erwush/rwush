@@ -1,1 +1,1 @@
-skibidi
+skibidi sigma gyatt +5000 ohio aura
