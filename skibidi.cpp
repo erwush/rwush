@@ -1,8 +1,10 @@
 #include <iostream> //file header
 
+using namespace std; //deklarasi namespace
 
-using namespace std;
+//deklarasi fungsi
 
+//main program
 int main() {
 
 
