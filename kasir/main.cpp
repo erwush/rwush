@@ -1,7 +1,31 @@
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 
 using namespace std;
 
+// Fungsi untuk memformat angka menjadi format ribuan dengan titik dan koma sebagai pemisah desimal
+string formatRupiah(float amount) {
+    stringstream ss;
+    ss << fixed << setprecision(2) << amount; // Mengubah angka menjadi string dengan 2 desimal
+    string strAmount = ss.str();
+
+    // Ubah desimal titik menjadi koma
+    int pos = strAmount.find('.');
+    if (pos != string::npos) {
+        strAmount.replace(pos, 1, ",");
+    }
+
+    // Tambahkan titik setiap tiga angka dari kanan sebelum koma
+    pos = strAmount.find(',');
+    int insertPosition = pos - 3;
+    while (insertPosition > 0) {
+        strAmount.insert(insertPosition, ".");
+        insertPosition -= 3;
+    }
+
+    return strAmount;
+}
 
 int main() {
 	// part deklarasi / declare
@@ -11,6 +35,7 @@ int main() {
 	// part awalan
 	cout<<"Silahkan input nama anda: ";
 	getline(cin, nama); //baca input dengan spasi
+	system("CLS"); //menghilangkan output "Silahkan blablabla"
 	cout<<"Halo "<<nama<<", Selamat datang di Toko Wati"<< endl;
 	
 	
@@ -32,7 +57,7 @@ int main() {
 	puser = 0;
 	while (puser == 0) {
 	cin>>b1;
-	if (b1 != 40000 && b1 != 20000 && b1 != 1000 && b1 != 80000 && b1 != 13000 && b1 != 65000 && b1 != 23000 && b1 != 7000 && b1 != 1000000) {
+	if (b1 != 40000 && b1 != 20000 && b1 != 1000 && b1 != 80000 && b1 != 13000 && b1 != 65000 && b1 != 23000 && b1 != 7000 && b1 != 1000000 && b1 != 0) {
 	cout<<"Maaf, harga dari barang yang anda masukkan tidak terdeteksi oleh sistem."<<endl;
 	cout<<"Mohon masukkan harga dari barang yang tersedia di toko kami."<<endl;
 	puser = 0;
@@ -50,7 +75,7 @@ int main() {
 	puser = 0;
 	while (puser == 0) {
 	cin>>b2;
-	if (b2 != 40000 && b2 != 20000 && b2 != 1000 && b2 != 80000 && b2 != 13000 && b2 != 65000 && b2 != 23000 && b2 != 7000 && b2 != 1000000) {
+	if (b2 != 40000 && b2 != 20000 && b2 != 1000 && b2 != 80000 && b2 != 13000 && b2 != 65000 && b2 != 23000 && b2 != 7000 && b2 != 1000000 && b2 != 0) {
 	cout<<"Maaf, harga dari barang yang anda masukkan tidak terdeteksi oleh sistem."<<endl;
 	cout<<"Mohon masukkan harga dari barang yang tersedia di toko kami."<<endl;
 	puser = 0;
@@ -68,7 +93,7 @@ int main() {
 	puser = 0;
 	while (puser == 0) {
 	cin>>b3;
-	if (b3 != 40000 && b3 != 20000 && b3 != 1000 && b3 != 80000 && b3 != 13000 && b3 != 65000 && b3 != 23000 && b3 != 7000 && b3 != 1000000) {
+	if (b3 != 40000 && b3 != 20000 && b3 != 1000 && b3 != 80000 && b3 != 13000 && b3 != 65000 && b3 != 23000 && b3 != 7000 && b3 != 1000000 && b3 != 0) {
 	cout<<"Maaf, harga dari barang yang anda masukkan tidak terdeteksi oleh sistem."<<endl;
 	cout<<"Mohon masukkan harga dari barang yang tersedia di toko kami."<<endl;
 	puser = 0;
@@ -86,7 +111,7 @@ int main() {
 	puser = 0;
 	while (puser == 0) {
 	cin>>b4;
-	if (b4 != 40000 && b4 != 20000 && b4 != 1000 && b4 != 80000 && b4 != 13000 && b4 != 65000 && b4 != 23000 && b4 != 7000 && b4 != 1000000) {
+	if (b4 != 40000 && b4 != 20000 && b4 != 1000 && b4 != 80000 && b4 != 13000 && b4 != 65000 && b4 != 23000 && b4 != 7000 && b4 != 1000000 && b4 != 0) {
 	cout<<"Maaf, harga dari barang yang anda masukkan tidak terdeteksi oleh sistem."<<endl;
 	cout<<"Mohon masukkan harga dari barang yang tersedia di toko kami."<<endl;
 	puser = 0;
@@ -104,7 +129,7 @@ int main() {
 	puser = 0;
 	while (puser == 0) {
 	cin>>b5;
-	if (b5 != 40000 && b5 != 20000 && b5 != 1000 && b5 != 80000 && b5 != 13000 && b5 != 65000 && b5 != 23000 && b5 != 7000 && b5 != 1000000) {
+	if (b5 != 40000 && b5 != 20000 && b5 != 1000 && b5 != 80000 && b5 != 13000 && b5 != 65000 && b5 != 23000 && b5 != 7000 && b5 != 1000000 && b5 != 0) {
 	cout<<"Maaf, harga dari barang yang anda masukkan tidak terdeteksi oleh sistem."<<endl;
 	cout<<"Mohon masukkan harga dari barang yang tersedia di toko kami."<<endl;
 	puser = 0;
@@ -119,7 +144,7 @@ int main() {
 	
 	// total
 	total = b1+b2+b3+b4+b5;
-	cout<<"Total pembelian anda adalah: " <<total<< endl;
+	cout<<"Total pembelian anda adalah: Rp. "<<formatRupiah(total)<< endl;
 	
 	// pembayaran
 	cout<<"Silahkan masukkan nominal uang untuk pembayaran: ";
@@ -130,7 +155,7 @@ int main() {
     cin>>bayar;
     }
     kembalian = bayar - total;
-    cout<<"Ini kembalian anda: Rp."<< kembalian<< endl;
+    cout<<"Ini kembalian anda: Rp."<<formatRupiah(kembalian)<< endl;
     return 0;
     
 }
