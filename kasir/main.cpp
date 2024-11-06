@@ -20,9 +20,9 @@ int main() {
 	cout<<"3. Permen +5000 Aura: Rp. 1.000,00"<< endl;
 	cout<<"4: Kopi W Rizz: Rp. 80.000,00"<< endl;
 	cout<<"5. Garam Ohio: Rp. 13.000,00"<< endl;
-	cout<<"6. Sabun Kai Cenat: Rp. 65.000,00"<< endl;
-	cout<<"7. Pasta Gigi Fanum Tax: Rp. 23.000,00"<< endl;
-	cout<<"8. Jus Jambu Gyatt: Rp. 7.000,00"<< endl;
+	cout<<"6. Sabun Looksmaxxing: Rp. 65.000,00"<< endl;
+	cout<<"7. Pasta Gigi Mewing: Rp. 23.000,00"<< endl;
+	cout<<"8. Jus Jambu No Cap: Rp. 7.000,00"<< endl;
 	cout<<"9. Air Putih Brainrot: Rp. 1.000.000,00"<< endl;
 	cout<<"Masukkan harga barang yang ingin anda beli dengan maksimal barang yang bisa anda beli adalah 5."<< endl;
 	cout<<"Jika kurang dari 5 masukkan saja angka 0."<< endl;
